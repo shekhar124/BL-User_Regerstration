@@ -14,8 +14,7 @@ public class UserRegistration {
 		System.out.println("Enter last name");
 		String lname = scan.next();
 		registration.validLastName(lname);
-		
-		
+
 	}
 
 	private void validFirstName(String firstName) {
@@ -28,19 +27,20 @@ public class UserRegistration {
 			System.out.println("User first name is Invalid :( ");
 		}
 	}
-	private void validLastName(String firstName) {
+
+	private void validLastName(String LastName) {
 		String regex = "[A-Za-z]{2,15}";
 		Pattern pattern = Pattern.compile(regex);
-		Matcher matcher = pattern.matcher(firstName);
+		Matcher matcher = pattern.matcher(LastName);
 		if (matcher.matches()) {
 			System.out.println("User Last name is valid");
 		} else {
 			System.out.println("User Last name is Invalid");
 		}
 	}
+	
+
 }
-	
-	
 	
 	
 	
