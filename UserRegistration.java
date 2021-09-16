@@ -14,6 +14,9 @@ public class UserRegistration {
 		System.out.println("Enter last name");
 		String lname = scan.next();
 		registration.validLastName(lname);
+		System.out.println("Enter emailid");
+		String email = scan.next();
+		registration.validEmailId(email);
 
 	}
 
@@ -38,7 +41,17 @@ public class UserRegistration {
 			System.out.println("User Last name is Invalid");
 		}
 	}
-	
+	private void validEmailId (String Email) {
+		String regex ="[a-zA-Z0-9_\\-.]+[@][a-z]+[\\.][a-z]{2,3}";
+		Pattern pattern = Pattern.compile(regex);
+		Matcher matcher = pattern.matcher(Email);
+		if (matcher.matches()) {
+			System.out.println("User Email is valid");
+		} else {
+			System.out.println("User Email is Invalid");
+		}
+		
+	}
 
 }
 	
