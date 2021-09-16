@@ -17,6 +17,9 @@ public class UserRegistration {
 		System.out.println("Enter emailid");
 		String email = scan.next();
 		registration.validEmailId(email);
+		System.out.println("enter mobile no");
+		String mobileno = scan.next();
+		registration.validMobile(mobileno);
 
 	}
 
@@ -31,26 +34,38 @@ public class UserRegistration {
 		}
 	}
 
-	private void validLastName(String LastName) {
+	private void validLastName(String lastName) {
 		String regex = "[A-Za-z]{2,15}";
 		Pattern pattern = Pattern.compile(regex);
-		Matcher matcher = pattern.matcher(LastName);
+		Matcher matcher = pattern.matcher(lastName);
 		if (matcher.matches()) {
 			System.out.println("User Last name is valid");
 		} else {
 			System.out.println("User Last name is Invalid");
 		}
 	}
-	private void validEmailId (String Email) {
+	private void validEmailId (String email) {
 		String regex ="[a-zA-Z0-9_\\-.]+[@][a-z]+[\\.][a-z]{2,3}";
 		Pattern pattern = Pattern.compile(regex);
-		Matcher matcher = pattern.matcher(Email);
+		Matcher matcher = pattern.matcher(email);
 		if (matcher.matches()) {
 			System.out.println("User Email is valid");
 		} else {
 			System.out.println("User Email is Invalid");
 		}
 		
+	}
+
+	private void validMobile(String mobile) {
+		String regex = "[7,8,9][0-9]{9}";
+		Pattern pattern = Pattern.compile(regex);
+		Matcher matcher = pattern.matcher(mobile);
+		if (matcher.matches()) {
+			System.out.println("mobileno is valid");
+		} else {
+			System.out.println("mobileno is notvalid");
+
+		}
 	}
 
 }
