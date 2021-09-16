@@ -70,21 +70,21 @@ public class UserRegistration {
 
 		}
 	}
-
+//rule2
 	private void validPassword(String password) {
-		String regex = "[a-zA-z_0-9-@#$%^&.><!]{8,18}";
+		String regex = "[a-zA-z_0-9-@#$%^?/<~*()+-=|&.><!]{8,18}";
 		Pattern pattern = Pattern.compile(regex);
 		Matcher matcher = pattern.matcher(password);
 		if (matcher.matches()) {
 			System.out.println("Password is valid");
-			
-		}
-		else {
+
+		} else {
 			System.out.println("Password is not valid");
 		}
 
 	}
-}
 	
+    
+}
 	
 
