@@ -89,14 +89,14 @@ public class UserRegistration {
 	
 	public void multipleEmailValidation() {
 
-        String[] validEmail = { "abc@yahoo.com", "abc-100@yahoo.com", "abc.100@yahoo.com", "abc111@abc.com",
+		String[] validEmail = { "abc@yahoo.com", "abc-100@yahoo.com", "abc.100@yahoo.com", "abc111@abc.com",
                 "abc-100@abc.net", "abc.100@abc.com.au", "abc@1.com", "abc@gmail.com.com", "abc+100@gmail.com" };
         String[] InvalidEmail = { "abc", "abc@.com.my", "abc123@gmail.a", "abc123@.com", "abc123@.com.com", ".abc@abc.com",
                 "abc()*@gmail.com", "abc@%*.com", "abc..2002@gmail.com", "abc.@gmail.com", "abc@gmail.com.1a",
                 "abc@gmail.com.aa.au" };
 
         for (String element : validEmail) {
-            String emailRegex ="[a-zA-Z0-9_\\-.]+[@][a-z]+[\\.][a-z]{2,3}" ;
+            String emailRegex = "^\\w+([+-_.][\\w])*@[\\w]+\\.(\\w{2,4}\\.)?[^\\d]{2,4}$";
 
             Pattern pattern = Pattern.compile(emailRegex);
             Matcher matcher = pattern.matcher(element);
@@ -104,7 +104,7 @@ public class UserRegistration {
         }
         System.out.println("\n Invalid emails");
         for (String element : InvalidEmail) {
-            String emailRegex = "[a-zA-Z0-9_\\-.]+[@][a-z]+[\\.][a-z]{2,3}";
+            String emailRegex = "^\\w+([+-_.][\\w])*@[\\w]+\\.(\\w{2,4}\\.)?[^\\d]{2,4}$";
 
             Pattern pattern = Pattern.compile(emailRegex);
             Matcher matcher = pattern.matcher(element);
