@@ -20,6 +20,9 @@ public class UserRegistration {
 		System.out.println("enter mobile no");
 		String mobileno = scan.next();
 		registration.validMobile(mobileno);
+		System.out.println("enter password");
+		String password = scan.next();
+		registration.validPassword(password);
 
 	}
 
@@ -68,9 +71,20 @@ public class UserRegistration {
 		}
 	}
 
+	private void validPassword(String password) {
+		String regex = "[a-zA-z_0-9-@#$%^&.><!]{8,18}";
+		Pattern pattern = Pattern.compile(regex);
+		Matcher matcher = pattern.matcher(password);
+		if (matcher.matches()) {
+			System.out.println("Password is valid");
+			
+		}
+		else {
+			System.out.println("Password is not valid");
+		}
+
+	}
 }
-	
-	
 	
 	
 
