@@ -70,7 +70,8 @@ public class UserRegistration {
 
 		}
 	}
-//rule3: should have numerac number
+//rule4: All rules Satisfyed
+	
 	private void validPassword(String password) {
 		String regex = "[a-zA-z_0-9-@#$%^?/<~*()+-=|&.><!]{8,18}";
 		Pattern pattern = Pattern.compile(regex);
